@@ -23,8 +23,8 @@ const NFTImages = () => {
       {customers.length > 0 ? (
         <div
           style={{
-            width: "1280px",
-            margin: "0 auto",
+            // width: "1280px",
+            // margin: "0 auto",
             display: "flex",
             flexWrap: "wrap",
             gap: "20px",
@@ -32,30 +32,26 @@ const NFTImages = () => {
         >
           {customers.map((customer) => (
             <Card key={uuid()} sx={{ maxWidth: 345 }}>
-              <CardActionArea key={uuid()}>
+              <CardActionArea>
                 <CardMedia
                   component="img"
                   height="300"
                   image={customer.image_url}
                   alt={customer.name}
-                  key={uuid()}
                 />
               </CardActionArea>
-              <CardContent key={uuid()}>
-                <Typography
-                  key={uuid()}
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                >
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
                   {customer.name}
                 </Typography>
               </CardContent>
               <Button
+                component={"a"}
+                href={customer.permalink}
+                target="_blank"
                 fullWidth
                 color="secondary"
                 variant="contained"
-                key={uuid()}
               >
                 Подробнее
               </Button>
