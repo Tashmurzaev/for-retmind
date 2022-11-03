@@ -53,7 +53,7 @@ const NFTImages = () => {
                 color="secondary"
                 variant="contained"
               >
-                Подробнее
+                more detailed
               </Button>
             </Card>
           ))}
