@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/for-retmind/static/css/main.6e0fe9d3.css",
-    "main.js": "/for-retmind/static/js/main.d5b052ac.js",
+    "main.js": "/for-retmind/static/js/main.5e0b77bb.js",
     "static/media/mikasa.gif": "/for-retmind/static/media/mikasa.ac181f6a5db2fd48177d.gif",
     "index.html": "/for-retmind/index.html",
     "main.6e0fe9d3.css.map": "/for-retmind/static/css/main.6e0fe9d3.css.map",
-    "main.d5b052ac.js.map": "/for-retmind/static/js/main.d5b052ac.js.map"
+    "main.5e0b77bb.js.map": "/for-retmind/static/js/main.5e0b77bb.js.map"
   },
   "entrypoints": [
     "static/css/main.6e0fe9d3.css",
-    "static/js/main.d5b052ac.js"
+    "static/js/main.5e0b77bb.js"
   ]
 }
