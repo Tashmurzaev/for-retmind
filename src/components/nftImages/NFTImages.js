@@ -17,49 +17,54 @@ const NFTImages = () => {
     dispatch(fetchCustomers());
   }, []);
 
-  return (
-    <div>
-      {customers.length > 0 ? (
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "20px",
-          }}
-        >
-          {customers.map((customer) => (
-            <Card key={uuid()} sx={{ maxWidth: 300 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height={250}
-                  image={customer.image_url}
-                  alt={customer.name}
-                />
-              </CardActionArea>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {customer.name}
-                </Typography>
-              </CardContent>
-              <Button
-                component={"a"}
-                href={customer.permalink}
-                target="_blank"
-                fullWidth
-                color="secondary"
-                variant="contained"
-              >
-                more detailed
-              </Button>
-            </Card>
-          ))}
-        </div>
-      ) : (
-        <Loader />
-      )}
-    </div>
-  );
+  if (customers)
+    return (
+      <div>
+        {customers.length > 0 ? (
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "20px",
+            }}
+          >
+            {customers.map(
+              (customer) =>
+                customer.image_url && (
+                  <Card key={uuid()} sx={{ maxWidth: 300 }}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height={250}
+                        image={customer.image_url}
+                        alt={customer.name}
+                      />
+                    </CardActionArea>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {customer.name}
+                      </Typography>
+                    </CardContent>
+
+                    <Button
+                      component={"a"}
+                      href={customer.permalink}
+                      target="_blank"
+                      fullWidth
+                      color="secondary"
+                      variant="contained"
+                    >
+                      more detailed
+                    </Button>
+                  </Card>
+                )
+            )}
+          </div>
+        ) : (
+          <Loader />
+        )}
+      </div>
+    );
 };
 
 export default NFTImages;
