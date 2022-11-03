@@ -13,7 +13,6 @@ import Typography from "@mui/material/Typography";
 const NFTImages = () => {
   const dispatch = useDispatch();
   const customers = useSelector((state) => state.customers.customers);
-  console.log(customers);
   useEffect(() => {
     dispatch(fetchCustomers());
   }, []);
@@ -23,19 +22,17 @@ const NFTImages = () => {
       {customers.length > 0 ? (
         <div
           style={{
-            // width: "1280px",
-            // margin: "0 auto",
             display: "flex",
             flexWrap: "wrap",
             gap: "20px",
           }}
         >
           {customers.map((customer) => (
-            <Card key={uuid()} sx={{ maxWidth: 345 }}>
+            <Card key={uuid()} sx={{ maxWidth: 300 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="300"
+                  height={250}
                   image={customer.image_url}
                   alt={customer.name}
                 />
